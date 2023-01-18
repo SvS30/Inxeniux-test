@@ -1,10 +1,10 @@
-const express = require("express")
-const dotenv = require("dotenv")
-const Mongoose = require('mongoose')
-const bodyParser = require('body-parser')
+const express = require("express"),
+    dotenv = require("dotenv"),
+    Mongoose = require('mongoose'),
+    bodyParser = require('body-parser');
 
-const connectionMongoDB = require('./config/database')
-const userRoutes = require('./routes/users')
+const connectionMongoDB = require('./config/database'),
+    userRoutes = require('./routes/users');
 
 const app = express();
 
