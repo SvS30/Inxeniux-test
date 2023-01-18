@@ -4,14 +4,16 @@ Test Técnico: Inxeniux Backend
 ### Requerimientos
 - NodeJS >= v14.18.2
 - npm >= v8.3.0
+- MongoDB >= v5.0
 
 ### Instalación
 1. Clonar `.env.example` y renombrar copia a `.env`.
 2. Configurar variables de entorno en .env.
-```
-BACKEND_PORT=  <- puerto en el que correra el backend
-BACKEND_URL=  <- URL en el que correra el backend para consumir en el frontend
-```
+    ```
+    BACKEND_PORT=  <- puerto en el que correra el backend
+    BACKEND_URL=  <- URL en el que correra el backend para consumir en el frontend
+    MONGO_URI=  <- URI de conexión a MongoDB
+    ```
 3. Instalar dependencias, ejecutar `npm install`.
 
 ### Scripts
