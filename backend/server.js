@@ -1,6 +1,9 @@
-const express = require("express");
+const express = require("express")
+const dotenv = require("dotenv")
 
 const app = express();
+
+dotenv.config({ path: '.env' })
 
 const PORT = process.env.BACKEND_PORT || 8000;
 
