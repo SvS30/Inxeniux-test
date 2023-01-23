@@ -1,8 +1,16 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-import { MDBDataTable } from 'mdbreact';
+import {
+  MDBDataTable,
+  MDBContainer,
+  MDBCol,
+  MDBBtn,
+  MDBRow
+} from 'mdbreact';
 import React from 'react';
+
+import './App.css'
 
 function App() {
 
@@ -49,12 +57,21 @@ function App() {
   };
 
   return (
-    <MDBDataTable
-      striped
-      bordered
-      hover
-      data={data}
-    />
+    <React.Fragment>
+      <MDBContainer>
+        <MDBRow>
+          <MDBCol md="6">User index</MDBCol>
+          <MDBCol md="6">Add</MDBCol>
+        </MDBRow>
+      </MDBContainer>
+      <MDBDataTable
+        striped
+        bordered
+        hover
+        responsive
+        data={data}
+      />
+    </React.Fragment>
   );
 }
 
