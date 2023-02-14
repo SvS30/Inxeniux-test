@@ -33,10 +33,11 @@
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mdbreact": "^5.2.0",
     "mongoose": "^6.8.4",
     "react": "^18.2.0",
+    "react-data-table-component": "^7.5.3",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
