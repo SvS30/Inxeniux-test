@@ -138,13 +138,13 @@ function App() {
               <div className="content">
                 <header className="major">
                   <h2>User index</h2>
-                  <button className='btn-add-user' onClick={() => {  setUserRecord(null); handleModal() }}>Add User</button>
+                  <button className='btn-add-user' onClick={() => {  setUserRecord(null); document.getElementById("userForm").reset(); handleModal() }}>Add User</button>
                 </header>
                 <DataTable columns={columns} data={rows} pagination responsive
                   progressPending={pending} subHeader
                   subHeaderComponent={subHeaderComponentMemo} persistTableHead />
                 <Modal handleClose={handleModal} show={statusModal}>
-                  <form onSubmit={handleForm}>
+                  <form onSubmit={handleForm} id="userForm">
                     <div className="banner">
                       <h1>Register Form</h1>
                     </div>
