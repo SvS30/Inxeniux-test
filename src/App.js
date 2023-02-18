@@ -143,67 +143,97 @@ function App() {
                 <DataTable columns={columns} data={rows} pagination responsive
                   progressPending={pending} subHeader
                   subHeaderComponent={subHeaderComponentMemo} persistTableHead />
-                <Modal handleClose={handleModal} show={statusModal}>
+                <Modal show={statusModal}>
                   <form onSubmit={handleForm} id="userForm">
-                    <div className="banner">
-                      <h1>Register Form</h1>
+                    <div className="title">Welcome</div>
+                    <div className="subtitle">Let's create your account!</div>
+                    <div className="input-container ic1">
+                      <input type="text" className="input" id='name' name="name" placeholder=' '
+                        value={userRecord ? userRecord.name : ""} onChange={(event) => { setUserRecord({ ...userRecord, name: event.target.value }) }} />
+                      <div className="cut"></div>
+                      <label htmlFor="name" className="placeholder">Full Name</label>
                     </div>
-                    <div className="item">
-                      <p>Name</p>
-                      <div className="name-item">
-                        <input type="text" name="name" placeholder="First" value={userRecord ? userRecord.name : ""} onChange={(event) => { setUserRecord({ ...userRecord, name: event.target.value }) }} />
-                        <input type="text" name="paternal_lastname" placeholder="Last" value={userRecord ? userRecord.paternal_lastname : ""} onChange={(event) => { setUserRecord({ ...userRecord, paternal_lastname: event.target.value }) }} />
-                        <input type="text" name="mother_lastname" placeholder="Last" value={userRecord ? userRecord.mother_lastname : ""} onChange={(event) => { setUserRecord({ ...userRecord, mother_lastname: event.target.value }) }} />
-                      </div>
+                    <div className="input-container ic1">
+                      <input type="text" className='input' id='paternal_lastname' name="paternal_lastname" placeholder=' '
+                        value={userRecord ? userRecord.paternal_lastname : ""} onChange={(event) => { setUserRecord({ ...userRecord, paternal_lastname: event.target.value }) }} />
+                      <div className="cut"></div>
+                      <label htmlFor="paternal_lastname" className="placeholder">Paternal Lastname</label>
                     </div>
-                    <div className="item">
-                      <p>Age</p>
-                      <input type="number" min={1} name="age" value={userRecord ? userRecord.age : ""} onChange={(event) => { setUserRecord({ ...userRecord, age: event.target.value }) }} />
+                    <div className="input-container ic1">
+                      <input type="text" id='mother_lastname' className='input' name="mother_lastname" placeholder=' '
+                        value={userRecord ? userRecord.mother_lastname : ""} onChange={(event) => { setUserRecord({ ...userRecord, mother_lastname: event.target.value }) }} />
+                      <div className="cut"></div>
+                      <label htmlFor="mother_lastname" className="placeholder">Mother Lastname</label>
                     </div>
-                    <div className="item">
-                      <p>Phone</p>
-                      <input type="text" name="phone" value={userRecord ? userRecord.phone : ""} onChange={(event) => { setUserRecord({ ...userRecord, phone: event.target.value }) }} />
+                    <div className="input-container ic1" style={{ display: 'flex', gap: '20px' }}>
+                      <input type="number" min={1} className='input' id='age' name="age" placeholder=' '
+                        value={userRecord ? userRecord.age : ""} onChange={(event) => { setUserRecord({ ...userRecord, age: event.target.value }) }} />
+                      <div className="cut"></div>
+                      <label htmlFor="age" className="placeholder">Age</label>
+                      <input type="text" className='input' id='phone' name="phone" placeholder=' '
+                        value={userRecord ? userRecord.phone : ""} onChange={(event) => { setUserRecord({ ...userRecord, phone: event.target.value }) }} />
+                      <div className="cut" style={{ left: '34%' }}></div>
+                      <label htmlFor="phone" className="placeholder" style={{ left: '36%' }}>Phone</label>
+                      <input type="date" className='input' id='birthdate' name="birthdate" placeholder=' '
+                        value={userRecord ? userRecord.birthdate : ""} onChange={(event) => { setUserRecord({ ...userRecord, birthdate: event.target.value }) }} />
+                      <div className="cut" style={{ left: '67%' }}></div>
+                      <label htmlFor="birthdate" className="placeholder" style={{ left: '68%' }}>Birthdate</label>
                     </div>
-                    <div className="item">
-                      <p>Birth date</p>
-                      <input type="date" name="birthdate" value={userRecord ? userRecord.birthdate : ""} onChange={(event) => { setUserRecord({ ...userRecord, birthdate: event.target.value }) }} />
+                    <div className="input-container ic1">
+                      <input type="text" className='input' id='hobbies' name="hobbies" placeholder=' '
+                        value={userRecord ? userRecord.hobbies : ""} onChange={(event) => { setUserRecord({ ...userRecord, hobbies: event.target.value }) }} />
+                      <div className="cut"></div>
+                      <label htmlFor="hobbies" className="placeholder">Hobbies</label>
                     </div>
-                    <div className="item">
-                      <p>Hobbies</p>
-                      <input type="text" name="hobbies" value={userRecord ? userRecord.hobbies : ""} onChange={(event) => { setUserRecord({ ...userRecord, hobbies: event.target.value }) }} />
+                    <div className="input-container ic1">
+                      <input type="text" className='input' id='preferences' name="preferences" placeholder=' '
+                        value={userRecord ? userRecord.preferences : ""} onChange={(event) => { setUserRecord({ ...userRecord, preferences: event.target.value }) }} />
+                      <div className="cut"></div>
+                      <label htmlFor="preferences" className="placeholder">Preferences</label>
                     </div>
-                    <div className="item">
-                      <p>Preferences</p>
-                      <input type="text" name="preferences" value={userRecord ? userRecord.preferences : ""} onChange={(event) => { setUserRecord({ ...userRecord, preferences: event.target.value }) }} />
+                    <div className="input-container ic1" style={{ display: 'flex', gap: '20px' }}>
+                      <input type="text" className='input' id='country' name="country" placeholder=" "
+                        value={userRecord ? userRecord.country : ""} onChange={(event) => { setUserRecord({ ...userRecord, country: event.target.value }) }} />
+                      <div className="cut"></div>
+                      <label htmlFor="country" className="placeholder">Country</label>
+                      <input type="text" className='input' id='state' name="state" placeholder=" "
+                        value={userRecord ? userRecord.state : ""} onChange={(event) => { setUserRecord({ ...userRecord, state: event.target.value }) }} />
+                      <div className="cut" style={{ left: '50%' }}></div>
+                      <label htmlFor="state" className="placeholder" style={{ left: '52%' }}>State</label>
                     </div>
-                    <div className="item">
-                      <p>Address</p>
-                      <input type="text" name="country" placeholder="Country" value={userRecord ? userRecord.country : ""} onChange={(event) => { setUserRecord({ ...userRecord, country: event.target.value }) }} />
-                      <input type="text" name="state" placeholder="State" value={userRecord ? userRecord.state : ""} onChange={(event) => { setUserRecord({ ...userRecord, state: event.target.value }) }} />
-                      <div className="city-item">
-                        <input type="text" name="city" placeholder="City" value={userRecord ? userRecord.city : ""} onChange={(event) => { setUserRecord({ ...userRecord, city: event.target.value }) }} />
-                        <input type="text" name="name" placeholder="Postal / Zip code" value={userRecord ? userRecord.postal_code : ""} onChange={(event) => { setUserRecord({ ...userRecord, postal_code: event.target.value }) }} />
-                      </div>
+                    <div className="input-container ic1" style={{ display: 'flex', gap: '20px' }}>
+                      <input type="text" className='input' id='city' name="city" placeholder=" "
+                        value={userRecord ? userRecord.city : ""} onChange={(event) => { setUserRecord({ ...userRecord, city: event.target.value }) }} />
+                      <div className="cut"></div>
+                      <label htmlFor="city" className="placeholder">City</label>
+                      <input type="text" className='input' id='postal_code' name="postal_code" placeholder=" "
+                        value={userRecord ? userRecord.postal_code : ""} onChange={(event) => {setUserRecord({ ...userRecord, postal_code: event.target.value }) }} />
+                      <div className="cut" style={{ left: '50%' }}></div>
+                      <label htmlFor="postal_code" className="placeholder" style={{ left: '52%' }}>Postal code</label>
                     </div>
-                    <div className="item">
-                      <p>Language</p>
-                      <select name='language' value={userRecord ? userRecord.language : setUserRecord({ ...userRecord, language: "Spanish" })}
+                    <div className="input-container ic1" style={{ display: 'flex', gap: '20px' }}>
+                      <select id='language' name='language' className='input'
+                        value={userRecord ? userRecord.language : setUserRecord({ ...userRecord, language: "Spanish" })}
                         onChange={(event) => { setUserRecord({ ...userRecord, language: event.target.value }) }} >
                         <option value={'Spanish'}>Spanish</option>
                         <option value={'English'}>English</option>
                       </select>
-                    </div>
-                    <div className="item">
-                      <p>Marital Status</p>
-                      <select name='marital_status' value={userRecord ? userRecord.marital_status : setUserRecord({ ...userRecord, marital_status: "Single" })}
+                      <div className="cut"></div>
+                      <label htmlFor="language" className="placeholder">Language</label>
+                      <select id='marital_status' name='marital_status' className='input'
+                        value={userRecord ? userRecord.marital_status : setUserRecord({ ...userRecord, marital_status: "Single" })}
                         onChange={(event) => { setUserRecord({ ...userRecord, marital_status: event.target.value }) }} >
                         <option value={'Single'}>Single (a)</option>
                         <option value={'Married'}>Married (a)</option>
                         <option value={'Widower'}>Widower (a)</option>
                       </select>
+                      <div className="cut" style={{ left: '50%' }}></div>
+                      <label htmlFor="marital_status" className="placeholder" style={{ left: '52%' }}>Marital Status</label>
                     </div>
                     <div className="btn-block">
-                      <button type="submit">Send</button>
+                      <button type="submit" className='submit'>Send</button>
+                      <button type="button" className='submit' onClick={handleModal}
+                        style={{backgroundColor: 'red', color: 'white'}}>Close</button>
                     </div>
                   </form>
                 </Modal>
