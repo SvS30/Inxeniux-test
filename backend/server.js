@@ -2,10 +2,12 @@ const express = require("express"),
     dotenv = require("dotenv"),
     Mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
-    cors = require('cors');
+    cors = require('cors'),
+    swaggerUi = require('swagger-ui-express');
 
 const connectionMongoDB = require('./config/database'),
-    userRoutes = require('./routes/users');
+    userRoutes = require('./routes/users'),
+    swaggerSpecs = require('./config/swagger');
 
 const app = express();
 
@@ -17,6 +19,7 @@ app.use(bodyParser.json())
 app.use(cors({origin: 'http://localhost:3000'}))
 
 app.use('/api/users', cors(), userRoutes)
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs))
 
 app.get('/', (req, res) => { res.status(200).json({ 'message': 'Hello from backend' }) })
 
