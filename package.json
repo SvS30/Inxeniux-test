@@ -22,16 +22,31 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "backend": "node backend/server.js"
+    "backend": "cross-env NODE_ENV=development node ./node_modules/nodemon/bin/nodemon.js backend/server.js"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.4",
     "react": "^18.2.0",
+    "react-data-table-component": "^7.5.3",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "styled-components": "^5.3.6",
+    "web-vitals": "^2.1.4",
+    "swagger-jsdoc": "6.2.7",
+    "swagger-ui-express": "4.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.3"
   },
   "eslintConfig": {
     "extends": [
